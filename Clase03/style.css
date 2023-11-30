@@ -1,0 +1,46 @@
+* {
+   
+    
+}
+h1 {
+    color: black;
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 35%;
+}
+
+
+title {
+  
+  align-items: center;
+}
+
+div {
+    color: black;
+    margin: 100 ;
+    font-size: large;
+
+}
+
+body {
+    background-image: linear-gradient(black,white);
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+img {
+    width: 500;
+    
+    margin-left: 35%;
+    
+}
+#encabezado {
+    background-image: linear-gradient(orange,red);
+    background-image: url(bannerFondo.jpg);
+    background-size: 500px;
+    ;
+}
+
+.cuerpoDePagina{
+    background-image: linear-gradient(red,orange);
+}
+

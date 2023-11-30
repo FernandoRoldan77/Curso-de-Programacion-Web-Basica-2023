@@ -1,0 +1,30 @@
+.encabezado {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 40%;
+    padding-top: 1%;
+
+}
+
+body {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(https://i.postimg.cc/yxbCZMfp/fondo.png);
+ 
+
+}
+
+.registro {
+
+    padding-left: 30%;
+
+}
+
+.dispositivo {
+    padding-left: 30%;
+    
+}
+
+.confirmar {
+    padding-left: 30%;
+}
+
