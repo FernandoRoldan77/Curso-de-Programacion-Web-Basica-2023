@@ -1,0 +1,46 @@
+* {
+    background-color: cornflowerblue;
+    
+    
+}
+
+h1 {
+    float: right;
+    font-weight: bold;
+    background-color: aqua;
+    color: blue;
+    border-color: blue;
+    border-top-left-radius: 20% ;
+    border-bottom-right-radius:  20%;
+    border-style: solid ;
+
+}
+
+.container {
+    
+    display: grid;
+    
+    grid-template-columns: 25% 25% 25% 25%;
+
+    height: 90%;
+    width: 90%;
+    padding-left: 5%;
+}
+
+.item {
+    display: flex;
+    border-color:  orange;
+    border-style: solid;
+    padding-top: 10%;
+    padding-left: 10%;    
+}
+
+img {
+    height: 90%;
+    width: 90%;
+    /* Para ajustar bien la imagen al container */
+    border-color:  black;
+    border-style: solid;
+    border-width: thick;
+    
+}

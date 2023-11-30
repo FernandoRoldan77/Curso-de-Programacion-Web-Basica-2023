@@ -1,0 +1,52 @@
+
+.container {
+    grid-gap: 2px;
+    font-family: Verdana;
+    grid-template-columns: 100%;                          
+    grid-template-areas: "itemEncabezado" "itemEncabezado"
+                          "itemBarra itemArticulo";
+    background-color: slategray;
+
+    }
+   
+    .item {
+    background-color: #D9E8FB;
+    padding: 10px;
+    }
+
+    .itemEncabezado {
+        grid-area: "itemEncabezado";
+        background-color: tan;
+        color: red;
+        font-weight: bold;
+        padding-left: 50%;
+        border-style: solid;
+        border-color: white;
+    }
+    .itemBarra {
+        grid-area: "itemBarra";
+        background-color: slategray;
+         /* color: violet; */
+         border-style: solid;
+         border-color: white;
+
+    }
+
+    .itemArticulo{
+        grid-area: "itemBarra";
+        background-color: slategray;
+        border-style: solid;
+        border-color: white;
+        color: black;
+        font-weight: bolder;
+    }
+
+
+    .h3{
+        font-weight: bold;
+    }
+
+    .a{
+        text-decoration: underline;
+        color: violet;
+    }

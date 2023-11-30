@@ -1,0 +1,28 @@
+img {
+    padding-top: 40px;
+    width: 50%;
+
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 30%;
+
+}
+
+h3 {
+    padding-left: 8%;
+}
+
+a {
+    color: red;
+    padding-left: 20%;
+}
+
+p {
+    background-color: gray;
+    margin-right: 40%;
+
+}

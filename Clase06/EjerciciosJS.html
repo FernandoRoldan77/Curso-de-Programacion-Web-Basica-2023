@@ -1,0 +1,188 @@
+<html lang="es">
+
+<head>
+    <title>Practica Javascript</title>
+</head>
+
+<body>
+    <h1>Ejercicios resueltos del 1 al 16 sobre Javascript</h1>
+
+
+    <script>
+        // 1. Crear una variable llamada “nombreYApellido” con un array que contenga dos strings (el primero
+        // sería un nombre y el segundo un apellido). Crear una función que imprima en consola la frase “Su
+        // nombre es *nombre en el array* y su apellido es *apellido del array*”.
+        let nombreYApellido = ["Fernando", "Roldan"];
+        function imprimirNyP() {
+            return nombreYApellido;
+        }
+        console.log("Mostrar mi nombre y apellido", imprimirNyP());
+
+
+        // 2. Crear una función “elementoN” que toma un array y un número y nos retorna el elemento que se
+        // encuentra en ese número de dirección en el array. 
+        function elementoN(array, numero) {
+            return array[numero];
+        }
+        let arrayTest = [1, 2, 3, 4, 5, 6];
+        console.log(arrayTest, elementoN(arrayTest, 3));
+
+        // 3. Crear una función “dobleDelPrimero” que toma el primer elemento de un array, lo multiplica y lo
+        // retorna el mismo array con ese elemento agregado al principio.
+        function dobleDelPrimero(array) {
+            let multPrimerElemento = array[0] * 2;
+            array.unshift(multPrimerElemento);
+            return array;
+        }
+        let arrayMult = [5, 4, 3];
+        console.log("Array sin multiplicar primer elemento", arrayMult);
+        console.log("Primero elemento multiplicado agregado", dobleDelPrimero(arrayMult));
+
+        // 4. Creemos una variable global llamada “pendientes” conteniendo un array de strings. Crearemos tres
+        // funciones: una “agregarTarea” que agrega un string más al final del array, otra de “tareaResuelta”
+        // que elimine el primer elemento del array y una “tareaUrgente” que agregue un string al principio del
+        // array
+        var pendientes = [];
+        function agregarTarea(pendientes, s) {
+            pendientes.push(s);
+            return pendientes;
+
+        };
+        console.log(agregarTarea(pendientes, "Hola"));
+
+        function tareaResuelta(pendientes) {
+            pendientes.shift();
+            return pendientes;
+        }
+        console.log(tareaResuelta(["Hola", "Chau"]));
+
+        function tareaUrgente(pendientes, s) {
+            pendientes.unshift(s);
+            return pendientes;
+        }
+        console.log(tareaUrgente(["2", "3"], "1"));
+
+        // 5. Crear una función llamada es divisible, a la que le pasamos dos números y nos dice si el primer
+        // número es divisible por el segundo. Debe retornar una valor booleano.
+        function esDivisible(x, y) {
+            return ((x % y) == 0);
+        }
+        console.log("10 es divisible de 2?", esDivisible(10, 2));
+        console.log("10 es divisible de  6?", esDivisible(10, 6));
+
+        // 6. Crear una función llamada “cupoLleno” que compruebe si un array (que pasaremos como
+        // argumento) tiene una longitud mayor a 6. En caso positivo, retornar true, en caso negativo false.
+        function cupoLleno(array) {
+            return ((array.length) > 6);
+        }
+
+        let arrayMayorA6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let arrayMenorA6 = [1, 2, 3];
+        console.log("es array mayor a 6?", arrayMayorA6, cupoLleno(arrayMayorA6));
+        console.log("es array menor a 6?", arrayMenorA6, cupoLleno(arrayMenorA6));
+
+        // 7. Creemos dos variables globales: una llamada “canción” que albergue un string y otra variable
+        // “incluido” con un valor booleano. Crear una función que reciba como argumento el nombre de una
+        // canción y que, en caso de que “incluido” sea true, hará que la consola arroje “Canción ya incluída”.
+        // En caso falso, cambiará la variable “canción” por el valor del argumento y hará que la consola diga
+        // “¡Nueva canción incluida!”. Luego de eso, la consola deberá imprimir el valor de la variable
+        // “canción”.
+
+        var cancion = "";
+        var incluido = false;
+
+        function esCancionIncluida(nombreCancion) {
+            if (incluido == true) {
+                return (console.log("Cancion ya incluida"))
+            }
+            else {
+                cancion = nombreCancion;
+                incluido = true;
+                console.log("¡Nueva cancion incluida!");
+                console.log(cancion);
+            };
+
+        };
+
+        console.log(esCancionIncluida("Espadas y serpientes"));
+
+
+        // 8. Crear una función llamada “descuento” que toma un número, y si ese número es mayor a 2000,
+        // deberá restarle un 25% de ese número.
+        function descuento(numero) {
+            if (numero > 2000) {
+                return (numero - (numero * 0.25))
+            }
+            else {
+                return (console.log("El numero", numero, "no es mayor a 2000"))
+            }
+        };
+        let numeroADescontar = 5000;
+        console.log(descuento(numeroADescontar));
+
+        // 9. Crear una función llamada “parteDelDía”, a la cual se le pasa un número y, en caso de que el número
+        // sea entre 6 y 12, imprima en la consola “Es mañana”, si es entre 13 y 19 imprima “Es de tarde”, y si es
+        // entre 20 y 24 o entre 1 a 5, diga “Es de noche”. ¿Qué requisitos tiene esta función? Anotarlos como
+        // comentario dentro de la misma.
+
+        function parteDelDia(numero) {
+            //Pre: el parametro "numero" tiene que ser de un valor entre 1 y 24
+            if (esParteDelDiaEntre(numero, 6, 12)) {
+                return console.log("Es mañana");
+            }
+            else if (esParteDelDiaEntre(numero, 13, 19)) {
+                return console.log("Es tarde");
+            }
+            else if ((esParteDelDiaEntre(numero, 20, 24)) || (esParteDelDiaEntre(numero, 1, 5))) {
+                return console.log("Es de noche");
+            }
+
+        };
+        //Funcion auxilar que devuelve true o false si la hora del dia esta entre la hora1 y la hora2
+        function esParteDelDiaEntre(horaDelDia, hora1, hora2) {
+            return (horaDelDia >= hora1 && horaDelDia <= hora2);
+        }
+        
+       
+        console.log("La hora del dia es", 7, "entonces ", parteDelDia(7) );
+        console.log("La hora del dia es", 14,"entonces ", parteDelDia(14));
+        console.log("La hora del dia es", 21,"entonces ", parteDelDia(21));
+        console.log("La hora del dia es", 30,"entonces ", parteDelDia(30));
+
+        // 10. Crear una función llamada “reemplazar” que tome un array, un número de dirección dentro del
+        // array, y un elemento. El objetivo de esta función es retornar un nuevo array donde el elemento que
+        // estaba en la dirección dada sea eliminado y, en su lugar, se coloque el elemento que pasamos por
+        // parámetro (recuerden el uso de la función splice de los arrays).
+        function remplazar(array, numDir, elemento) {
+            array.splice(numDir, 1, elemento);
+            return array
+        };
+
+        console.log("Se remplaza el siguiente elemento de la array", [1, 2, 3, 4, 5],
+            "en la posicion", 0, remplazar([1, 2, 3, 4, 5], 0, 20));
+
+        // 11. Crear una función “compararCadenas” que toma dos strings y nos dice cuál de los dos es más
+        // extenso o si son iguales.
+
+        // 12. Crear una función “imprimirArray” que, tomando un array, imprima todos los elementos que
+        // contiene.
+
+        // 13. Crear una función “caracteresTotales” que, tomando un array de strings, nos sume que tan largo son
+        // los strings que contiene en total
+
+        // 14. Crear una función “limpiarDeImpares” que, tomando un array de números, lo retorne sin los
+        // números impares (pueden usar una función auxiliar que verifique si un numero es impar)
+
+        // 15. Crear una función que imprima una línea de asteriscos con una longitud que pasamos por parámetro.
+        // Usando esto, crear una función que imprima un triangulo de asteriscos de 5 pisos.
+
+        // 16. Creemos el objeto “telefono” que tiene por propiedad un número, contactos (un array con strings) y
+        // un proveedor (un string con el nombre de la empresa proveedora). Crear dos métodos para teléfono:
+        // uno que se llame «sonar» y que haga que la consola imprima «Ring ring ring» y otro que sea “llamar”
+        // y que tome un número, busque en sus contactos ese dirección dentro del array e imprima en la
+        // consola «Llamando a [nombre de la dirección]». Por ejemplo, si tengo de contactos a [“Martín”,
+        // “Lucas”, “Karen”] y hago telefono.llamar(1) me devuelve “Llamando a Lucas”.
+
+    </script>
+
+</html>

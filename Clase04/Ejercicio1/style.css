@@ -1,0 +1,24 @@
+div {
+    border: 2px solid black;
+    margin: 5px;
+}
+
+p {
+    height: 50px;
+    margin: 0;
+}
+
+.completo {
+    background-color: green;
+    width: 100%;
+}
+
+.mitad {
+    background-color: yellow;
+    width: 50%;
+}
+
+.bajo {
+    background-color: red;
+    width: 25%;
+}
