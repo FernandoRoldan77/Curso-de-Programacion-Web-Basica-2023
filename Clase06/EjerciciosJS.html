@@ -142,12 +142,12 @@
         function esParteDelDiaEntre(horaDelDia, hora1, hora2) {
             return (horaDelDia >= hora1 && horaDelDia <= hora2);
         }
-        
-       
-        console.log("La hora del dia es", 7, "entonces ", parteDelDia(7) );
-        console.log("La hora del dia es", 14,"entonces ", parteDelDia(14));
-        console.log("La hora del dia es", 21,"entonces ", parteDelDia(21));
-        console.log("La hora del dia es", 30,"entonces ", parteDelDia(30));
+
+
+        console.log("La hora del dia es", 7, "entonces ", parteDelDia(7));
+        console.log("La hora del dia es", 14, "entonces ", parteDelDia(14));
+        console.log("La hora del dia es", 21, "entonces ", parteDelDia(21));
+        console.log("La hora del dia es", 30, "entonces ", parteDelDia(30));
 
         // 10. Crear una función llamada “reemplazar” que tome un array, un número de dirección dentro del
         // array, y un elemento. El objetivo de esta función es retornar un nuevo array donde el elemento que
@@ -163,26 +163,106 @@
 
         // 11. Crear una función “compararCadenas” que toma dos strings y nos dice cuál de los dos es más
         // extenso o si son iguales.
+        function compararCadenas(s1, s2) {
+            if (s1.length > s2.length) {
+                return console.log("el mayor es", s1);
+            }
+            else if (s1.length == s2.length) {
+                return console.log(s1, s2, "Son iguales");
+            }
+            else if (s2.length > s1.length) {
+                return console.log("el mayor es", s2);
+            }
+        }
+        string1 = "Buenas noches"
+        string2 = "Adios"
+        console.log(compararCadenas(string1, string2));
 
         // 12. Crear una función “imprimirArray” que, tomando un array, imprima todos los elementos que
         // contiene.
+        function imprimirArray(array) {
+            for (i = 0; i < array.length; i++) {
+                console.log(array[i]);
+            }
+        }
+        console.log(imprimirArray([1, 2, 3]));
 
         // 13. Crear una función “caracteresTotales” que, tomando un array de strings, nos sume que tan largo son
         // los strings que contiene en total
+        function caracteresTotales(arrayS) {
+            let contadorDeCaracteres = 0;
+
+            for (i = 0; i < arrayS.length; i++) {
+                contadorDeCaracteres += arrayS[i].length;
+
+            }
+            return contadorDeCaracteres;
+        }
+
+        arrayS = ["Hola", "Chau"];
+        console.log("la longitud del array es " + caracteresTotales(arrayS));
 
         // 14. Crear una función “limpiarDeImpares” que, tomando un array de números, lo retorne sin los
         // números impares (pueden usar una función auxiliar que verifique si un numero es impar)
+        function limpiarDeImpares(arrayN) {
+            let nuevaArray = []
+            for (i = 0; i < arrayN.length; i++) {
+
+                nuevaArray.push(agregarSiEsPar(arrayN[i]));
+
+            }
+            return nuevaArray;
+        }
+        function agregarSiEsPar(numero) {
+            if (numero % 2 == 0) {
+                return numero;
+            }
+            else 0; //preguntar
+
+        }
+        arrayDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8];
+        console.log(limpiarDeImpares(arrayDeNumeros));
 
         // 15. Crear una función que imprima una línea de asteriscos con una longitud que pasamos por parámetro.
         // Usando esto, crear una función que imprima un triangulo de asteriscos de 5 pisos.
+        function imprimirTriangulo() {
+            for (let i = 1; i <= 5; i++) {
+                imprimirLineaAsteriscos(i);
+            }
+        }
+        function imprimirLineaAsteriscos(longitud) {
+            let linea = '';
+            for (let i = 0; i < longitud; i++) {
+                linea += '*';
+            }
+            console.log(linea);
+        }
 
+        console.log("Triángulo de asteriscos de 5 pisos:");
+        imprimirTriangulo();
+        
+        
         // 16. Creemos el objeto “telefono” que tiene por propiedad un número, contactos (un array con strings) y
         // un proveedor (un string con el nombre de la empresa proveedora). Crear dos métodos para teléfono:
         // uno que se llame «sonar» y que haga que la consola imprima «Ring ring ring» y otro que sea “llamar”
         // y que tome un número, busque en sus contactos ese dirección dentro del array e imprima en la
         // consola «Llamando a [nombre de la dirección]». Por ejemplo, si tengo de contactos a [“Martín”,
         // “Lucas”, “Karen”] y hago telefono.llamar(1) me devuelve “Llamando a Lucas”.
-
+        
+        let telefono = {
+            numero    : 1512345678,
+            contactos : ["Fernando","Estefania","Ester"],
+            provedor  : "",
+            
+            sonar: function (){
+                console.log("Ring ring ring");
+            },
+            llamar: function (nContacto){        
+                   console.log ("Llamando a " + telefono.contactos[nContacto]) ;
+            }    
+        }
+        telefono.llamar(1);
+        
     </script>
 
 </html>
